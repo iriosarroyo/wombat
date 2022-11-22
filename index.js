@@ -46,7 +46,7 @@ let level = -1,
 const nextLevel = () => {
   level = (level + 1) % levels.length;
   lastImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  animation = 10 ?? 180;
+  animation = 150;
   const { walls } = levels[level];
   const rights = walls.map((wall) => wall.x + wall.width);
   setMaxWidth(Math.max(...rights));
