@@ -1,3 +1,4 @@
+import { isPressedCtrl, isPressedShift, keysPressed } from "./keycontrol.js";
 import { levels } from "./levels.js";
 import { canvas, ctx, setMaxWidth } from "./tools.js";
 import { Wombat } from "./Wombat.js";
@@ -20,9 +21,10 @@ const createPoopWalls = (x, y, wallsHeight = 120, width = 200, height = 10) => {
 const [poopWalls, poopLayer] = createPoopWalls(1170, 70);
 const walls = Array(6)
   .fill(null)
-  .map((_, i) => createWall((i + 1) * 150, (i + 1) * 100, 10, 10, true))
+  .map((_, i) => createWall((i + 1) * 150, (i + 1) * 200, 10, 10, true))
   .concat([
-    createWall(150, 0, 10, 100),
+    //createWall(1000, 600, 200, 10, true)
+    //createWall(150, 0, 10, 100),
     /* createWall(670, 350),
     createWall(680, 120),
     createWall(460, 120),
@@ -36,7 +38,7 @@ const walls = Array(6)
 
 //const walls = [createWall(300, 50), createWall(520, 50)].concat(poopWalls);
 //let levels = [{ walls, poopLayer }];
-console.log(levels);
+//console.log(levels)
 let level = -1,
   animation,
   lastImage,
@@ -44,13 +46,19 @@ let level = -1,
 const nextLevel = () => {
   level = (level + 1) % levels.length;
   lastImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  animation = 180;
+  animation = 10 ?? 180;
   const { walls } = levels[level];
   const rights = walls.map((wall) => wall.x + wall.width);
   setMaxWidth(Math.max(...rights));
   wombat = new Wombat(0);
 };
 nextLevel();
+
+const goToLevel = (n) =>{
+  if(n  >= levels.length) return;
+  level = n - 1
+  nextLevel();
+}
 
 const showAnimation = () => {
   ctx.font = "32pt serif";
@@ -75,7 +83,9 @@ const showAnimation = () => {
 
 const draw = () => {
   requestAnimationFrame(draw);
-
+  
+  levels.forEach((_,i) => {if(isPressedCtrl() && isPressedShift() && keysPressed[`Digit${i + 1}`]) goToLevel(i)})
+  
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "black";
   if (animation) return showAnimation();
@@ -85,7 +95,7 @@ const draw = () => {
   ctx.fillText(`Nivel ${level + 1}`, 5, 32);
   const { walls, poopLayer } = levels[level];
   for (let wall of walls) {
-    if (wall.isIce) ctx.fillStyle = "lightblue";
+    if (wall.isIce) ctx.fillStyle = "blue";
     else ctx.fillStyle = "white";
     const y = canvas.height - wall.height - wall.y;
     ctx.fillRect(wall.x, y, wall.width, wall.height);

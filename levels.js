@@ -562,4 +562,161 @@ export const levels = [
       height: 10,
     },
   },
+  
+    {
+      "walls": [
+          {
+              "x": 150,
+              "y": 100,
+              "width": 10,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 300,
+              "y": 200,
+              "width": 10,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 450,
+              "y": 300,
+              "width": 10,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 600,
+              "y": 400,
+              "width": 10,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 750,
+              "y": 500,
+              "width": 10,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 900,
+              "y": 600,
+              "width": 10,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 1000,
+              "y": 600,
+              "width": 200,
+              "height": 10,
+              "isIce": true
+          },
+          {
+              "x": 1160,
+              "y": 70,
+              "width": 10,
+              "height": 120,
+              "isIce": false
+          },
+          {
+              "x": 1170,
+              "y": 70,
+              "width": 200,
+              "height": 10,
+              "isIce": false
+          },
+          {
+              "x": 1370,
+              "y": 70,
+              "width": 10,
+              "height": 120,
+              "isIce": false
+          }
+      ],
+      "poopLayer": {
+          "x": 1170,
+          "y": 70,
+          "width": 200,
+          "height": 10,
+          "isIce": false
+      }
+  },
+  {
+    "walls": [
+        {
+            "x": 150,
+            "y": 200,
+            "width": 10,
+            "height": 10,
+            "isIce": true
+        },
+        {
+            "x": 300,
+            "y": 400,
+            "width": 10,
+            "height": 10,
+            "isIce": true
+        },
+        {
+            "x": 450,
+            "y": 600,
+            "width": 10,
+            "height": 10,
+            "isIce": true
+        },
+        {
+            "x": 600,
+            "y": 800,
+            "width": 10,
+            "height": 10,
+            "isIce": true
+        },
+        {
+            "x": 750,
+            "y": 1000,
+            "width": 10,
+            "height": 10,
+            "isIce": true
+        },
+        {
+            "x": 900,
+            "y": 1200,
+            "width": 10,
+            "height": 10,
+            "isIce": true
+        },
+        {
+            "x": 1160,
+            "y": 70,
+            "width": 10,
+            "height": 120,
+            "isIce": false
+        },
+        {
+            "x": 1170,
+            "y": 70,
+            "width": 200,
+            "height": 10,
+            "isIce": false
+        },
+        {
+            "x": 1370,
+            "y": 70,
+            "width": 10,
+            "height": 120,
+            "isIce": false
+        }
+    ],
+    "poopLayer": {
+        "x": 1170,
+        "y": 70,
+        "width": 200,
+        "height": 10,
+        "isIce": false
+    },
+}
+  
 ];

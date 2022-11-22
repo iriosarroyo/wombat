@@ -27,16 +27,16 @@ export class Wombat extends Entity {
   width = wombatW;
   step = 0;
   animationIteration = 0;
-  y = 0;
   minY = 0;
   vely = 0;
   velx = 0;
   timer = 0;
   poopTimer = 15;
   poops = [];
-  constructor(x, velx = 2) {
+  constructor(x, y = 0, velx = 2) {
     super();
     this.x = x;
+    this.y = y
     this.prevX = x;
     this.vel = velx;
   }
@@ -58,7 +58,6 @@ export class Wombat extends Entity {
   moveY() {
     this.prevY = this.y;
     if (this.y > this.minY) {
-      if (this.vely === 0) console.log(this.y);
       if (
         this.vely <= 0 &&
         isPressedUp() &&
