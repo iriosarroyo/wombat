@@ -690,21 +690,21 @@ export const levels = [
         },
         {
             "x": 1160,
-            "y": 70,
+            "y": 150,
             "width": 10,
             "height": 120,
             "isIce": false
         },
         {
             "x": 1170,
-            "y": 70,
+            "y": 150,
             "width": 200,
             "height": 10,
             "isIce": false
         },
         {
             "x": 1370,
-            "y": 70,
+            "y": 150,
             "width": 10,
             "height": 120,
             "isIce": false
