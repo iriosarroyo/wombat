@@ -712,7 +712,7 @@ export const levels = [
     ],
     "poopLayer": {
         "x": 1170,
-        "y": 70,
+        "y": 150,
         "width": 200,
         "height": 10,
         "isIce": false
